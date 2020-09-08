@@ -1,0 +1,34 @@
+.new-tweet {
+  text-align: center;
+  width: 100%;
+ }
+
+ #tweet-text {
+  width: 80%;
+  border: 0;
+  border-bottom: 2px solid gray;
+  outline: 0;
+  background: transparent;
+  line-height: 1em;
+  text-align: center;
+  margin-top: 1em;
+ }
+
+ .submit-button {
+  font-family: 'Bungee', cursive;
+  color: white;
+  background-color: #4056A1;
+  border: none;
+  border-radius: 5px;
+ }
+
+ .counter {
+  font-family: 'Bungee', cursive;
+  justify-content: flex-end;
+ }
+
+ .tweet-form-footer {
+   margin: 1% 10%;
+   display: flex;
+   justify-content: space-between;
+ }
