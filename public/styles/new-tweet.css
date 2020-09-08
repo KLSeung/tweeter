@@ -27,6 +27,10 @@
   justify-content: flex-end;
  }
 
+ .counter-red {
+  color: red;
+ }
+
  .tweet-form-footer {
    margin: 1% 10%;
    display: flex;
