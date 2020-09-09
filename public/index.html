@@ -23,6 +23,7 @@
     </script>
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="/scripts/moment.js"></script>
 
     <!-- App JS -->
     <script type="text/javascript" src="/scripts/client.js"></script>
@@ -63,22 +64,7 @@
           </footer>
         </form>
       </section>
-      <section class="tweet-container">
-        <article>
-          <header>
-            <img class="tweet-profile" src="./images/tweet-profile-male.png"></img>
-            <span class="name">Kevin Lee</span>
-            <span class="username">@KLSeung</span>
-          </header>
-          <p class="tweet-text">If I have seen further it is by standing on the shoulder of giants</p>
-          <footer>
-            <span class="tweet-day">10 days ago</span>
-            <img class="icon" src="./images/favorite.png"></img>
-            <img class="icon" src="./images/share.png"></img>
-            <img class="icon" src="./images/bookmark.png"></img>
-          </footer>
-        </article>
-      </section>
+      <section id="tweets-container"></section>
     </main>
   </body>
 </html>

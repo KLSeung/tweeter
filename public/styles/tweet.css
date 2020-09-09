@@ -1,21 +1,25 @@
-.tweet-container {
+#tweets-container {
   width: 100%;
   height: 100%;
-  align-content: center;
   margin: 5% 0;
+}
+
+.tweet {
+  align-content: center;
   border: 3px solid #4d4d4d;
   padding: 3%;
   opacity: 0.6;
+  margin-bottom: 50px;
 }
 
-.tweet-container:hover {
+.tweet:hover {
   -webkit-box-shadow: 10px 11px 0px 2px rgba(156,177,214,1);
   -moz-box-shadow: 10px 11px 0px 2px rgba(156,177,214,1);
   box-shadow: 10px 11px 0px 2px rgba(156,177,214,1);
   opacity: 1;
 }
 
-.tweet-container header {
+#tweets-container header {
   display: flex;
   width: 100%;
 }
@@ -46,7 +50,7 @@
   margin-right: auto;
 }
 
-.tweet-container footer {
+#tweets-container footer {
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
