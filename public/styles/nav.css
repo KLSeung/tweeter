@@ -4,6 +4,8 @@ nav {
  color: #FFFF;
  padding: 1.5em;
  display: flex;
+ position: sticky;
+ top: 0;
 }
 
 nav > span {
