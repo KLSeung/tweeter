@@ -25,8 +25,10 @@ $(() => {
   const renderTweets = (data) => {
     const $tweetContainer = $('#tweets-container');
     for (const id in data) {
+      //retrieve each tweet in the data
       const tweet = data[id];
 
+      //Create each tweet element in the data and append to container
       const tweetHTML = createTweetElement(tweet)
       $tweetContainer.append(tweetHTML)
     }
@@ -57,11 +59,25 @@ $(() => {
     }
   ]
 
-  renderTweets(data);
-  
-  // const $tweet = createTweetElement(tweetData)
+  const $tweetForm= $(".new-tweet").children('form');
 
-  // Test / driver code (temporary)
-  // console.log($tweet); // to see what it looks like
-  // $('#tweets-container').append($tweet); // to add it to the page so we can make sure it's got all the right elements, classes, etc.
+  //Event listener for new tweet form
+  $tweetForm.on('submit', function (event) {
+    //Prevent page refresh
+    event.preventDefault();
+
+    //Serialize data to get key values 
+    const serializedData = $(this).serialize();
+
+    $.post('./tweets', serializedData)
+    .then((res) => {
+      console.log(res);
+    })  
+
+  })
+
+
+  renderTweets(data);
+
+
 });
