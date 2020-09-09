@@ -12,6 +12,7 @@
   line-height: 1em;
   margin-top: 1em;
   resize: none;
+  transition: 0.3s;
  }
 
  .submit-button {
@@ -34,4 +35,10 @@
    margin: 1% 0;
    display: flex;
    justify-content: space-between;
+ }
+
+ .error-message {
+   color: red;
+   opacity: 0;
+   transition: 0.3s;
  }

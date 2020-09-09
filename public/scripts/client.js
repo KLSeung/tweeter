@@ -35,6 +35,7 @@ $(() => {
   };
 
   const loadtweets = () => {
+    //Get method to retrive all the tweets in the database
     $.get('./tweets')
       .then(res => {
         renderTweets(res);
@@ -59,16 +60,22 @@ $(() => {
         .then(res => {
           //Clear input in form
           tweetFormInput.val('');
+          //Reset error styling after submit
+          $(this).children('footer').children('.error-message').css('opacity', '0');
+          $(this).children('textarea').css('border-bottom', '2px solid #4d4d4d');
 
           //Empty the tweet container first before loading the tweets again
           $('#tweets-container').empty();
           loadtweets();
         });
     } else {
-      alert('The tweet cannot be blank or exceed the character limit!');
+      //Change styling to display error
+      $(this).children('footer').children('.error-message').css('opacity', '1');
+      $(this).children('textarea').css('border-bottom', '2px solid red');
     }
   });
 
+  //Load the tweets as soon as the page loads first
   loadtweets();
 
 });

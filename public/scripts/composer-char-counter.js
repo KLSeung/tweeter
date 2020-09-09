@@ -1,11 +1,14 @@
 $(document).ready(() => {
   const $tweetInput = $('#tweet-text');
 
+  //Eventlistener for the keyup event for the input
   $tweetInput.keyup(function() {
     const textLength = $(this).val().length;
     const counter = $(this).parent('form').children('footer').children('.counter');
-    counter.html(140 - textLength);
+    //Set counter inner text to be the new value
+    counter.text(140 - textLength);
 
+    //Change counter to red if it exceeds 140 characters
     if (textLength > 140) {
       counter.addClass("counter-red");
     } else {
