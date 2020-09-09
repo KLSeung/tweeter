@@ -6,21 +6,21 @@
 
 $(() => {
   const createTweetElement = (tweetData) => {
-  const article = $('<article class="tweet">');
-  const header = $('<header>')
-                    .append($(`<img class="tweet-profile" src=${tweetData.user.avatars}>`))
-                    .append($(`<span class="name">`).text(tweetData.user.name))
-                    .append($(`<span class="username>`).text(tweetData.user.handle))
+    const article = $('<article class="tweet">');
+    const header = $('<header>')
+                      .append($(`<img class="tweet-profile" src=${tweetData.user.avatars}>`))
+                      .append($(`<span class="name">`).text(tweetData.user.name))
+                      .append($(`<span class="username>`).text(tweetData.user.handle));
 
-  const tweetParagrah = $(`<p class="tweet-text">`).text(tweetData.content.text)
-  const footer = $('<footer>')
-                    .append($(`<span class="tweet-day">`).text(moment(tweetData.created_at).fromNow()))
-                    .append($('<img class="icon" src="./images/favorite.png">'))
-                    .append($('<img class="icon" src="./images/share.png>'))
-                    .append($('<img class="icon" src="./images/bookmark.png">'))
+    const tweetParagrah = $(`<p class="tweet-text">`).text(tweetData.content.text);
+    const footer = $('<footer>')
+                      .append($(`<span class="tweet-day">`).text(moment(tweetData.created_at).fromNow()))
+                      .append($('<img class="icon" src="./images/favorite.png">'))
+                      .append($('<img class="icon" src="./images/share.png>'))
+                      .append($('<img class="icon" src="./images/bookmark.png">'));
 
-  return article.append(header).append(tweetParagrah).append(footer);
-  }
+    return article.append(header).append(tweetParagrah).append(footer);
+  };
 
   const renderTweets = (data) => {
     const $tweetContainer = $('#tweets-container');
@@ -29,8 +29,8 @@ $(() => {
       const tweet = data[id];
 
       //Create each tweet element in the data and append to container
-      const tweetHTML = createTweetElement(tweet)
-      $tweetContainer.append(tweetHTML)
+      const tweetHTML = createTweetElement(tweet);
+      $tweetContainer.append(tweetHTML);
     }
   };
 
@@ -41,20 +41,26 @@ $(() => {
       });
   };
 
-  const $tweetForm= $(".new-tweet").children('form');
-  
+  const $tweetForm = $(".new-tweet").children('form');
+
   //Event listener for new tweet form
   $tweetForm.on('submit', function (event) {
     //Prevent page refresh
     event.preventDefault();
 
-    //Serialize data to get key values 
-    const serializedData = $(this).serialize();
+    const tweetFormLength = $(this).children('textarea').val().length;
+    //Serialize data to get key values
 
-    //Post method to /tweets directory sending the serialized Data
-    $.post('./tweets', serializedData)
-    .then(res => console.log(res));  
-  })
+    if (tweetFormLength <= 140 && tweetFormLength !== 0) {
+      const serializedData = $(this).serialize();
+
+      //Post method to /tweets directory sending the serialized Data
+      $.post('./tweets', serializedData)
+        .then(res => console.log(res));
+    } else {
+      alert('The tweet cannot be blank or exceed the character limit!');
+    }
+  });
 
   loadtweets();
 
