@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
     <link rel="stylesheet" href="./styles/nav.css" type="text/css" />
     <link rel="stylesheet" href="./styles/new-tweet.css" type="text/css" />
+    <link rel="stylesheet" href="./styles/tweet.css" type="text/css" />
    
     <!-- JQuery Import -->
     <script src="https://code.jquery.com/jquery-3.5.1.min.js" 
@@ -38,9 +39,9 @@
       </div>
     </nav>
 
-    <header>
-      <div class="profile_pic_container">
-        <img class="profile_pic" src="./images/profile-hex.png">
+    <header class="profile-container">
+      <div class="profile-pic-container">
+        <img class="profile-pic" src="./images/profile-hex.png">
       </div>
       <br>
       <div>
@@ -60,6 +61,22 @@
             <output name="counter" class="counter" for="tweet-text">140</output>
           </footer>
         </form>
+      </section>
+      <section class="tweet-container">
+        <article>
+          <header>
+            <img class="tweet-profile" src="./images/tweet-profile-male.png"></img>
+            <span class="name">Kevin Lee</span>
+            <span class="username">@KLSeung</span>
+          </header>
+          <p class="tweet-text">If I have seen further it is by standing on the shoulder of giants</p>
+          <footer>
+            <span class="tweet-day">10 days ago</span>
+            <img class="icon" src="./images/favorite.png"></img>
+            <img class="icon" src="./images/share.png"></img>
+            <img class="icon" src="./images/bookmark.png"></img>
+          </footer>
+        </article>
       </section>
     </main>
   </body>
