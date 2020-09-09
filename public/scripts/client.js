@@ -30,7 +30,7 @@ $(() => {
 
       //Create each tweet element in the data and append to container
       const tweetHTML = createTweetElement(tweet);
-      $tweetContainer.append(tweetHTML);
+      $tweetContainer.prepend(tweetHTML);
     }
   };
 
@@ -57,7 +57,12 @@ $(() => {
       //Post method to /tweets directory sending the serialized Data
       $.post('./tweets', serializedData)
         .then(res => {
+          //Clear input in form
           tweetFormInput.val('');
+
+          //Empty the tweet container first before loading the tweets again
+          $('#tweets-container').empty();
+          loadtweets();
         });
     } else {
       alert('The tweet cannot be blank or exceed the character limit!');
@@ -65,6 +70,5 @@ $(() => {
   });
 
   loadtweets();
-
 
 });
