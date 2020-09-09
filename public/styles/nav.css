@@ -6,12 +6,18 @@ nav {
  display: flex;
  position: sticky;
  top: 0;
+ transition: 0.4s;
 }
 
 nav > span {
   font-family: 'Bungee', cursive;
   font-size: 30px;
   margin-top: 5px;
+}
+
+.shrink-navbar{
+  height: 80px;
+  transition: 0.4s;
 }
 
 .navItem {
