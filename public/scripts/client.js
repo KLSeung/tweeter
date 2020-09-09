@@ -48,15 +48,17 @@ $(() => {
     //Prevent page refresh
     event.preventDefault();
 
-    const tweetFormLength = $(this).children('textarea').val().length;
+    const tweetFormInput = $(this).children('textarea');
     //Serialize data to get key values
 
-    if (tweetFormLength <= 140 && tweetFormLength !== 0) {
+    if (tweetFormInput.val().length <= 140 && tweetFormInput.val().length !== 0) {
       const serializedData = $(this).serialize();
 
       //Post method to /tweets directory sending the serialized Data
       $.post('./tweets', serializedData)
-        .then(res => console.log(res));
+        .then(res => {
+          tweetFormInput.val('');
+        });
     } else {
       alert('The tweet cannot be blank or exceed the character limit!');
     }
