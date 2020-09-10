@@ -22,6 +22,10 @@
   border: none;
   border-radius: 5px;
  }
+ 
+ .submit-button:hover {
+   cursor: pointer;
+ }
 
  .counter {
   font-family: 'Bungee', cursive;

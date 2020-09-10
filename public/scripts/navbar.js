@@ -7,4 +7,8 @@ $(document).ready(() => {
       $('nav').removeClass('shrink-navbar');
     }
   });
+
+  $('.logo').on('click', () => {
+    window.location.href = '/' 
+  })
 });

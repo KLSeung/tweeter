@@ -4,8 +4,10 @@ nav {
  color: #FFFF;
  padding: 1.5em;
  display: flex;
- position: sticky;
+ position: fixed;
  top: 0;
+ width: 100%;
+ z-index: 100;
  transition: 0.4s;
 }
 
@@ -33,4 +35,8 @@ nav > span {
   height: 30px;
   margin-left: 1em;
   color: salmon;
+}
+
+.logo:hover {
+  cursor: pointer;
 }
