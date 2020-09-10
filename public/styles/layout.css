@@ -50,3 +50,25 @@ body {
    color: inherit;
    flex-wrap: wrap;
  }
+
+ .scroll-up-container {
+  width: 100%;
+ }
+
+ .scroll-up-button {
+   position: fixed;
+   bottom: 0;
+   right: 0;
+   margin: 0 2% 2% 0;
+   height: 70px;
+   width: 70px;
+   border-radius: 50%;
+   opacity: 0;
+   transition: 0.4s;
+ }
+
+ .scroll-up-button:hover {
+  cursor: pointer;
+}
+
+
