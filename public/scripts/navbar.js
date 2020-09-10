@@ -11,4 +11,14 @@ $(document).ready(() => {
   $('.logo').on('click', () => {
     window.location.href = '/' 
   })
+
+  $('.nav-span').on('click', () => {
+    //Seems like this is easier than using the jquery animate method
+    document.getElementById('new-tweet').scrollIntoView(true);
+  })
+
+  $('.arrow-down-icon').on('click', () => {
+    //Seems like this is easier than using the jquery animate method
+    document.getElementById('new-tweet').scrollIntoView(true);
+  })
 });

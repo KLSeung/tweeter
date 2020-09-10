@@ -22,7 +22,7 @@ nav > span {
   transition: 0.4s;
 }
 
-.navItem {
+.nav-item {
   margin-left: auto;
   font-family: 'Source Sans Pro', sans-serif;
   font-size: 25px;
@@ -31,12 +31,20 @@ nav > span {
   flex-wrap: wrap;
 }
 
-.arrow_down_icon {
+.arrow-down-icon {
   height: 30px;
   margin-left: 1em;
   color: salmon;
 }
 
+.arrow-down-icon:hover {
+  cursor: pointer;
+}
+
 .logo:hover {
+  cursor: pointer;
+}
+
+.nav-span:hover {
   cursor: pointer;
 }
